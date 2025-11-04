@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<script>
+function btnAdd_onclick(){
+    sessionStorage.setItem(tbxKeyName.value, tbxKeyValue.value);
+}
+function btnShow_onclick(){
+    tbxKeyValue.value=sessionStorage.getItem(tbxKeyName.value);
+}
+function btnDelete_onclick(){
+    if (sessionStorage.getItem(tbxKeyName.value) !=null){
+        sessionStorage.removeItem(tbxKeyName.value);
+        tbxKeyName.value='';
+        tbxKeyValue.value='';
+    }
+}
+function btnDeleteAll_onclick(){
+    sessionStorage.clear();
+}
+</script>
+
+
+<table border="0">
+<tr>
+    <td>Key Name</td>
+    <td>
+        <input type="text" id="tbxKeyName" placeholder="Session Key Name" style="width: 95%;"/>
+    </td>
+</tr>
+<tr>
+    <td>Key Value</td>
+    <td>
+        <input type="text" id="tbxKeyValue" placeholder="Session Key Value" style="width:95%"/>
+    </td>
+</tr>
+<td colspan="2">
+<input type="button" value="Cancel" onclick="location.href='session.html';"/>
+<input type="button" value="Add" onclick="btnAdd_onclick();"/>
+<input type="button" value="Show" onclick="btnShow_onclick();"/>
+<input type="button" value="Delete" onclick="btnDelete_onclick();"/>
+<input type="button" value="Delete All" onclick="btnDeleteAll_onclick();"/>
+</td>
+</table>
