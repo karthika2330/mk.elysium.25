@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<head>
+ <link href="zlib/ucss/ualign1.css" rel="stylesheet"/>   
 <script>
 function btnAdd_onclick(){
     sessionStorage.setItem(tbxKeyName.value, tbxKeyValue.value);
@@ -17,9 +19,9 @@ function btnDeleteAll_onclick(){
     sessionStorage.clear();
 }
 </script>
-
-
-<table border="0">
+</head>
+<table border="0" class="center-middle">
+    <caption>Session</caption>
 <tr>
     <td>Key Name</td>
     <td>
@@ -39,4 +41,5 @@ function btnDeleteAll_onclick(){
 <input type="button" value="Delete" onclick="btnDelete_onclick();"/>
 <input type="button" value="Delete All" onclick="btnDeleteAll_onclick();"/>
 </td>
+
 </table>
